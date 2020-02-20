@@ -1,0 +1,29 @@
+.header {
+  background-color: silver;
+}
+
+.header-top > img {
+  width: 140px;
+  object-fit: cover;
+  object-position: center;
+  margin: 10px 0;
+}
+
+.header-bottom {
+  background-color: white;
+}
+
+.header-bottom > .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin: 10px 10px;
+  font-size: 24px;
+}

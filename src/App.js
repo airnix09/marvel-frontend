@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cookies from "js-cookie";
+import "./reset.css";
 
-function App() {
+import Characters from "./containers/Characters";
+import Character from "./containers/Character";
+import Comics from "./containers/Comics";
+import Header from "./components/Header";
+import "./App.css";
+
+const App = () => {
+  const [favorite, setFavorite] = useState([]);
+
+  useEffect(() => {
+    Cookies.set("favoris", JSON.stringify(favorite));
+  }, [favorite]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/characters">
+          <Characters setFavorite={setFavorite} favorite={favorite} />
+        </Route>
+        <Route path="/comics/">
+          <Comics setFavorite={setFavorite} favorite={favorite} />
+        </Route>
+        <Route path="/character/:id">
+          <Character setFavorite={setFavorite} favorite={favorite} />
+        </Route>
+        <Route path="/">
+          <Characters setFavorite={setFavorite} favorite={favorite} />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

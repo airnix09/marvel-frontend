@@ -1,0 +1,36 @@
+.search {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.search > * {
+  margin: 10px;
+}
+.search > input {
+  outline: none;
+  border: 1px solid #d5d7db;
+  width: 300px;
+  background-color: #f9f9f9;
+  line-height: 30px;
+  font-size: 24px;
+  padding: 10px;
+  color: #2f2f33;
+  box-sizing: border-box;
+}
+
+.search > button {
+  outline: none;
+  width: 300px;
+  background-color: ;
+  background-color: #ea171d;
+  color: white;
+  line-height: 30px;
+  font-size: 24px;
+  padding: 10px;
+  box-sizing: border-box;
+}
