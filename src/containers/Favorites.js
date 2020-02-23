@@ -52,7 +52,7 @@ const Favorites = () => {
           );
           // on stock la réponse dans un état tableau
           const copy = [...dataChar];
-          copy.push(response.data.results);
+          copy.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
           setDataChar(copy);
         }
       }
@@ -76,7 +76,7 @@ const Favorites = () => {
           console.log("retour du backend pour comics", response.data.results);
           // on stock la réponse dans un état tableau
           const copy = [...dataCom];
-          copy.push(response.data.results);
+          copy.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
           setDataCom(copy);
         }
       }
