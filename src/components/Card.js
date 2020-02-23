@@ -21,7 +21,7 @@ const Card = ({
             if (
               setFavoriteCharacters &&
               favoriteCharacters &&
-              favoriteCharacters.indexOf(id) !== -1
+              favoriteCharacters.indexOf(id) === -1
             ) {
               const copy = [...favoriteCharacters];
               copy.push(id);
@@ -29,7 +29,7 @@ const Card = ({
             } else if (
               setFavoriteComics &&
               favoriteComics &&
-              favoriteComics.indexOf(id) !== -1
+              favoriteComics.indexOf(id) === -1
             ) {
               const copy = [...favoriteComics];
               copy.push(id);
