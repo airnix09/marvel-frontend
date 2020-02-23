@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Card from "../components/Card";
 import Cookies from "js-cookie";
 import "./Favorites.css";
 
@@ -103,8 +105,6 @@ const Favorites = () => {
                       elem.thumbnail.path + "." + elem.thumbnail.extension
                     }
                     description={elem.description}
-                    setFavoriteCharacters={setFavoriteCharacters}
-                    favoriteCharacters={favoriteCharacters}
                   />
                 );
               })
@@ -127,8 +127,6 @@ const Favorites = () => {
                       elem.thumbnail.path + "." + elem.thumbnail.extension
                     }
                     description={elem.description}
-                    setFavoriteComics={setFavoriteComics}
-                    favoriteComics={favoriteComics}
                   />
                 );
               })
