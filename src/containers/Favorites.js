@@ -42,10 +42,10 @@ const Favorites = () => {
       // pour chaque personnage dans les favoris
       if (listFavCharacters.length > 0) {
         for (let index = 0; index < listFavCharacters.length; index++) {
-          const elem = listFavCharacters[index];
+          const char = listFavCharacters[index];
           // récupération des données sur le backend
-          console.log("url for Characters to fetch : ", urlChar + elem);
-          const response = await axios.get(urlChar + elem);
+          console.log("url for Characters to fetch : ", urlChar + char);
+          const response = await axios.get(urlChar + char);
           console.log(
             "retour du backend pour characters",
             response.data.results
@@ -69,9 +69,9 @@ const Favorites = () => {
       // pour chaque personnage dans les favoris
       if (listFavCharacters.length > 0) {
         for (let index = 0; index < listFavCharacters.length; index++) {
-          const elem = listFavCharacters[index];
+          const com = listFavCharacters[index];
           // récupération des données sur le backend
-          console.log("url for comics to fetch : ", urlCom + elem);
+          console.log("url for comics to fetch : ", urlCom + com);
           const response = await axios.get(urlCom + elem);
           console.log("retour du backend pour comics", response.data.results);
           // on stock la réponse dans un état tableau
