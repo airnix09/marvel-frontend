@@ -42,7 +42,7 @@ const Favorites = () => {
       // pour chaque personnage dans les favoris
       if (listFavCharacters.length > 0) {
         for (let index = 0; index < listFavCharacters.length; index++) {
-          const elem = array[index];
+          const elem = listFavCharacters[index];
           // récupération des données sur le backend
           const response = await axios.get(urlChar + elem);
           console.log("retour du backend", response.data.results);
@@ -65,7 +65,7 @@ const Favorites = () => {
       // pour chaque personnage dans les favoris
       if (listFavCharacters.length > 0) {
         for (let index = 0; index < listFavCharacters.length; index++) {
-          const elem = array[index];
+          const elem = listFavCharacters[index];
           // récupération des données sur le backend
           const response = await axios.get(urlCom + elem);
           console.log("retour du backend", response.data.results);
