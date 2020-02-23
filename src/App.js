@@ -14,10 +14,13 @@ const App = () => {
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
 
   useEffect(() => {
+    console.log(favoriteComics);
     Cookies.set("favoriteComics", JSON.stringify(favoriteComics));
   }, [favoriteComics]);
 
   useEffect(() => {
+    console.log(favoriteCharacters);
+
     Cookies.set("favoriteCharacters", JSON.stringify(favoriteCharacters));
   }, [favoriteCharacters]);
 
