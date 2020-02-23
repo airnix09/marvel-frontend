@@ -4,8 +4,8 @@ import "./Favorites.css";
 
 const Favorites = () => {
   // récupération des cookies
-  const strFavoriteComics = Cookies.get("strFavoriteComics");
-  const strFavoriteCharacters = Cookies.get("strFavoriteCharacters");
+  const strFavoriteComics = Cookies.get("FavoriteComics");
+  const strFavoriteCharacters = Cookies.get("FavoriteCharacters");
   // check
   console.log("strFavoriteComics from Cookies", strFavoriteComics);
   console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
