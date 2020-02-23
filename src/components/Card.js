@@ -1,5 +1,4 @@
 import React from "react";
-import Cookies from "js-cookie";
 import "./Card.css";
 
 const Card = ({
@@ -40,10 +39,19 @@ const Card = ({
           Ajouter au favoris
         </button>
       </div>
-      <div className="card-infos">
-        <h2>{title}</h2>
-        <p>{description}</p>
-      </div>
+      {setFavoriteCharacters && favoriteCharacters ? (
+        <Link to={"/character/" + elem.id} key={elem.id}>
+          <div className="card-infos">
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </div>
+        </Link>
+      ) : (
+        <div className="card-infos">
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -90,18 +90,15 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
           {isLoaded ? (
             data.results.map((elem, index) => {
               return (
-                <Link to={"/character/" + elem.id} key={elem.id}>
-                  <Card
-                    id={elem.id}
-                    title={elem.name}
-                    picture={
-                      elem.thumbnail.path + "." + elem.thumbnail.extension
-                    }
-                    description={elem.description}
-                    setFavoriteCharacters={setFavoriteCharacters}
-                    favoriteCharacters={favoriteCharacters}
-                  />
-                </Link>
+                <Card
+                  key={elem.id}
+                  id={elem.id}
+                  title={elem.name}
+                  picture={elem.thumbnail.path + "." + elem.thumbnail.extension}
+                  description={elem.description}
+                  setFavoriteCharacters={setFavoriteCharacters}
+                  favoriteCharacters={favoriteCharacters}
+                />
               );
             })
           ) : (
