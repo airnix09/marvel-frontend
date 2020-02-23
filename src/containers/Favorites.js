@@ -56,8 +56,6 @@ const Favorites = () => {
           setDataChar(copy);
         }
       }
-      // on check le continue de datachar
-      console.log("data characters :", dataChar);
       // on dit que la page est chargée
       setIsCharLoaded(true);
     } catch (error) {
@@ -82,8 +80,6 @@ const Favorites = () => {
           setDataCom(copy);
         }
       }
-      // on check le continue de datacom
-      console.log("data comics :", dataCom);
       // on dit que la page est chargée
       setIsComLoaded(true);
     } catch (error) {
@@ -96,6 +92,16 @@ const Favorites = () => {
     fetchCharData();
     fetchComData();
   }, []);
+
+  // check
+  if (isCharLoaded) {
+    // on check le contenu de datachar
+    console.log("data comics :", dataChar);
+  }
+  if (isComLoaded) {
+    // on check le contenu de datacom
+    console.log("data comics :", dataCom);
+  }
 
   return (
     <div className="favorites">
