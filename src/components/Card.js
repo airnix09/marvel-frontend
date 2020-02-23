@@ -41,7 +41,7 @@ const Card = ({
         </button>
       </div>
       {setFavoriteCharacters && favoriteCharacters ? (
-        <Link to={"/character/" + elem.id} key={elem.id}>
+        <Link to={"/character/" + id} key={id}>
           <div className="card-infos">
             <h2>{title}</h2>
             <p>{description}</p>
