@@ -1,3 +1,4 @@
-.favorites h2 {
+.favChar > h2,
+.favCom > h2 {
   color: white;
 }
