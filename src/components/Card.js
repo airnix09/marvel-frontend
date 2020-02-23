@@ -18,11 +18,19 @@ const Card = ({
         <img src={picture} alt={title} />
         <button
           onClick={() => {
-            if (setFavoriteCharacters && favoriteCharacters) {
+            if (
+              setFavoriteCharacters &&
+              favoriteCharacters &&
+              favoriteCharacters.indexOf(id) !== -1
+            ) {
               const copy = [...favoriteCharacters];
               copy.push(id);
               setFavoriteCharacters(copy);
-            } else if (setFavoriteComics && favoriteComics) {
+            } else if (
+              setFavoriteComics &&
+              favoriteComics &&
+              favoriteComics.indexOf(id) !== -1
+            ) {
               const copy = [...favoriteComics];
               copy.push(id);
               setFavoriteComics(copy);
