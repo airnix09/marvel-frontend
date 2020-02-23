@@ -15,7 +15,7 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
   // déclaration des states
   const [data, setData] = useState();
   const url =
-    "https://mybackend-marvel.herokuapp.com/character/" + id + "/comics";
+    "https://mybackend-marvel.herokuapp.com/characters/" + id + "/comics";
   const [isLoaded, setIsLoaded] = useState(false);
 
   const fetchData = async () => {
