@@ -4,8 +4,17 @@ import "./Favorites.css";
 
 const Favorites = () => {
   // récupération des cookies
-  const strFavoriteComics = Cookies.get("favoriteComics");
-  const strFavoriteCharacters = Cookies.get("favoriteCharacters");
+  const tmpFavoriteComics = Cookies.get("favoriteComics");
+  const tmpFavoriteCharacters = Cookies.get("favoriteCharacters");
+  // suppression des [ ] dans le string récupéré
+  const strFavoriteComics = tmpFavoriteComics.substring(
+    1,
+    tmpFavoriteComics.length - 1
+  );
+  const strFavoriteCharacters = tmpFavoriteCharacters.substring(
+    1,
+    tmpFavoriteCharacters.length - 1
+  );
   // check
   console.log("strFavoriteComics from Cookies", strFavoriteComics);
   console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
