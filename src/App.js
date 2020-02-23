@@ -10,27 +10,44 @@ import Header from "./components/Header";
 import "./App.css";
 
 const App = () => {
-  const [favorite, setFavorite] = useState([]);
+  const [favoriteComics, setFavoriteComics] = useState([]);
+  const [favoriteCharacters, setFavoriteCharacters] = useState([]);
 
   useEffect(() => {
-    Cookies.set("favoris", JSON.stringify(favorite));
-  }, [favorite]);
+    Cookies.set("favoriteComics", JSON.stringify(favoriteComics));
+  }, [favoriteComics]);
+
+  useEffect(() => {
+    Cookies.set("favoriteCharacters", JSON.stringify(favoriteCharacters));
+  }, [favoriteCharacters]);
 
   return (
     <Router>
       <Header />
       <Switch>
         <Route path="/characters">
-          <Characters setFavorite={setFavorite} favorite={favorite} />
+          <Characters
+            setFavoriteCharacters={setFavoriteCharacters}
+            favoriteCharacters={favoriteCharacters}
+          />
         </Route>
         <Route path="/comics/">
-          <Comics setFavorite={setFavorite} favorite={favorite} />
+          <Comics
+            setFavoriteComics={setFavoriteComics}
+            favoriteComics={favoriteComics}
+          />
         </Route>
         <Route path="/character/:id">
-          <Character setFavorite={setFavorite} favorite={favorite} />
+          <Character
+            setFavoriteComics={setFavoriteComics}
+            favoriteComics={favoriteComics}
+          />
         </Route>
         <Route path="/">
-          <Characters setFavorite={setFavorite} favorite={favorite} />
+          <Characters
+            setFavoriteCharacters={setFavoriteCharacters}
+            favoriteCharacters={favoriteCharacters}
+          />
         </Route>
       </Switch>
     </Router>

@@ -7,7 +7,7 @@ import Paging from "../components/Paging";
 import Search from "../components/Search";
 import "./Characters.css";
 
-const Characters = ({ setFavorite, favorite }) => {
+const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
   // init history
   const history = useHistory();
 
@@ -98,8 +98,8 @@ const Characters = ({ setFavorite, favorite }) => {
                       elem.thumbnail.path + "." + elem.thumbnail.extension
                     }
                     description={elem.description}
-                    setFavorite={setFavorite}
-                    favorite={favorite}
+                    setFavoriteCharacters={setFavoriteCharacters}
+                    favoriteCharacters={favoriteCharacters}
                   />
                 </Link>
               );

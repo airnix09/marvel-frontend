@@ -5,7 +5,7 @@ import { useHistory, Link, useParams } from "react-router-dom";
 import Card from "../components/Card";
 import "./Character.css";
 
-const Character = ({ setFavorite, favorite }) => {
+const Character = ({ setFavoriteComics, favoriteComics }) => {
   // init history
   const history = useHistory();
 
@@ -14,7 +14,8 @@ const Character = ({ setFavorite, favorite }) => {
 
   // déclaration des states
   const [data, setData] = useState();
-  const url = "https://mybackend-marvel.herokuapp.com/character/" + id;
+  const url =
+    "https://mybackend-marvel.herokuapp.com/character/" + id + "/comics";
   const [isLoaded, setIsLoaded] = useState(false);
 
   const fetchData = async () => {
@@ -52,8 +53,8 @@ const Character = ({ setFavorite, favorite }) => {
                   title={elem.title}
                   picture={elem.thumbnail.path + "." + elem.thumbnail.extension}
                   description={elem.description}
-                  setFavorite={setFavorite}
-                  favorite={favorite}
+                  setFavoriteComics={setFavoriteComics}
+                  favoriteComics={favoriteComics}
                 />
               );
             })

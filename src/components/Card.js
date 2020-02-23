@@ -2,16 +2,31 @@ import React from "react";
 import Cookies from "js-cookie";
 import "./Card.css";
 
-const Card = ({ id, title, description, picture, setFavorite, favorite }) => {
+const Card = ({
+  id,
+  title,
+  description,
+  picture,
+  setFavoriteCharacters,
+  favoriteCharacters,
+  setFavoriteComics,
+  favoriteComics
+}) => {
   return (
     <div className="card">
       <div className="card-illustration">
         <img src={picture} alt={title} />
         <button
           onClick={() => {
-            const copy = [...favorite];
-            copy.push(id);
-            setFavorite(copy);
+            if (setFavoriteCharacters && favoriteCharacters) {
+              const copy = [...favoriteCharacters];
+              copy.push(id);
+              setFavoriteCharacters(copy);
+            } else if (setFavoriteComics && favoriteComics) {
+              const copy = [...favoriteComics];
+              copy.push(id);
+              setFavoriteComics(copy);
+            }
           }}
         >
           Ajouter au favoris

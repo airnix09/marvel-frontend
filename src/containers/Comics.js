@@ -7,7 +7,7 @@ import Paging from "../components/Paging";
 import Search from "../components/Search";
 import "./Comics.css";
 
-const Comics = ({ setFavorite, favorite }) => {
+const Comics = ({ setFavoriteComics, favoriteComics }) => {
   // init history
   const history = useHistory();
 
@@ -94,8 +94,8 @@ const Comics = ({ setFavorite, favorite }) => {
                   title={elem.title}
                   picture={elem.thumbnail.path + "." + elem.thumbnail.extension}
                   description={elem.description}
-                  setFavorite={setFavorite}
-                  favorite={favorite}
+                  setFavoriteComics={setFavoriteComics}
+                  favoriteComics={favoriteComics}
                 />
               );
             })
