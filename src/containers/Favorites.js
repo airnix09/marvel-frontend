@@ -46,13 +46,18 @@ const Favorites = () => {
           // récupération des données sur le backend
           console.log("url for Characters to fetch : ", urlChar + elem);
           const response = await axios.get(urlChar + elem);
-          console.log("retour du backend", response.data.results);
+          console.log(
+            "retour du backend pour characters",
+            response.data.results
+          );
           // on stock la réponse dans un état tableau
           const copy = [...dataChar];
           copy.push(response.data.results);
           setDataChar(copy);
         }
       }
+      // on check le continue de datachar
+      console.log("data characters :", dataChar);
       // on dit que la page est chargée
       setIsCharLoaded(true);
     } catch (error) {
@@ -70,13 +75,15 @@ const Favorites = () => {
           // récupération des données sur le backend
           console.log("url for comics to fetch : ", urlCom + elem);
           const response = await axios.get(urlCom + elem);
-          console.log("retour du backend", response.data.results);
+          console.log("retour du backend pour comics", response.data.results);
           // on stock la réponse dans un état tableau
           const copy = [...dataCom];
           copy.push(response.data.results);
           setDataCom(copy);
         }
       }
+      // on check le continue de datacom
+      console.log("data comics :", dataCom);
       // on dit que la page est chargée
       setIsComLoaded(true);
     } catch (error) {
