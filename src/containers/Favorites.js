@@ -3,6 +3,20 @@ import Cookies from "js-cookie";
 import "./Favorites.css";
 
 const Favorites = () => {
+  // récupération des cookies
+  const strFavoriteComics = Cookies.get("strFavoriteComics");
+  const strFavoriteCharacters = Cookies.get("strFavoriteCharacters");
+  // check
+  console.log("strFavoriteComics from Cookies", strFavoriteComics);
+  console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
+
+  // recréation de la liste des favoris
+  const listFavComics = strFavoriteComics.split("%2C");
+  const listFavCharacters = strFavoriteCharacters.split("2%C");
+  // check
+  console.log("listFavComics", listFavComics);
+  console.log("listFavCharacters", listFavCharacters);
+
   return <div>Favoris</div>;
 };
 
