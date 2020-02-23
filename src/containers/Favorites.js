@@ -44,6 +44,7 @@ const Favorites = () => {
         for (let index = 0; index < listFavCharacters.length; index++) {
           const elem = listFavCharacters[index];
           // récupération des données sur le backend
+          console.log("url for Characters to fetch : ", urlChar + elem);
           const response = await axios.get(urlChar + elem);
           console.log("retour du backend", response.data.results);
           // on stock la réponse dans un état tableau
@@ -67,6 +68,7 @@ const Favorites = () => {
         for (let index = 0; index < listFavCharacters.length; index++) {
           const elem = listFavCharacters[index];
           // récupération des données sur le backend
+          console.log("url for comics to fetch : ", urlCom + elem);
           const response = await axios.get(urlCom + elem);
           console.log("retour du backend", response.data.results);
           // on stock la réponse dans un état tableau
