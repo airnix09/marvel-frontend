@@ -17,7 +17,18 @@ const Favorites = () => {
   console.log("listFavComics", listFavComics);
   console.log("listFavCharacters", listFavCharacters);
 
-  return <div>Favoris</div>;
+  return (
+    <div className="favorites">
+      <div className="container">
+        <div className="favChar">
+          <h2>Personnages favoris : </h2>
+        </div>
+        <div className="favCom">
+          <h2>Comics favoris :</h2>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Favorites;
