@@ -67,9 +67,9 @@ const Favorites = () => {
   const fetchComData = async () => {
     try {
       // pour chaque personnage dans les favoris
-      if (listFavCharacters.length > 0) {
-        for (let index = 0; index < listFavCharacters.length; index++) {
-          const com = listFavCharacters[index];
+      if (listFavComics.length > 0) {
+        for (let index = 0; index < listFavComics.length; index++) {
+          const com = listFavComics[index];
           // récupération des données sur le backend
           console.log("url for comics to fetch : ", urlCom + com);
           const response = await axios.get(urlCom + elem);
