@@ -20,7 +20,9 @@ const Header = ({ context, setContext }) => {
             <Link to="/comics">
               <li>Comics</li>
             </Link>
-            <li>Favoris</li>
+            <Link to="/favorites">
+              <li>Favoris</li>
+            </Link>
           </ul>
         </div>
       </div>
