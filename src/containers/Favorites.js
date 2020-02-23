@@ -41,6 +41,7 @@ const Favorites = () => {
     try {
       // pour chaque personnage dans les favoris
       if (listFavCharacters.length > 0) {
+        const tmpDataChar = [];
         for (let index = 0; index < listFavCharacters.length; index++) {
           const char = listFavCharacters[index];
           // récupération des données sur le backend
@@ -50,11 +51,12 @@ const Favorites = () => {
             "retour du backend pour characters",
             response.data.results
           );
-          // on stock la réponse dans un état tableau
-          const copy = [...dataChar];
-          copy.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
-          setDataChar(copy);
+          // on stock la réponse dans un état tableau temp
+          // si dans l'état il rafraichit la page et écrase celui déjà là.
+          tmpDataChar.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
         }
+        // on met à jour l'état avec le tableau temp finalisé
+        setDataChar(tmpDataChar);
       }
       // on dit que la page est chargée
       setIsCharLoaded(true);
@@ -68,17 +70,20 @@ const Favorites = () => {
     try {
       // pour chaque personnage dans les favoris
       if (listFavComics.length > 0) {
+        const tmpDataCom = [];
         for (let index = 0; index < listFavComics.length; index++) {
           const com = listFavComics[index];
           // récupération des données sur le backend
           console.log("url for comics to fetch : ", urlCom + com);
           const response = await axios.get(urlCom + com);
           console.log("retour du backend pour comics", response.data.results);
-          // on stock la réponse dans un état tableau
-          const copy = [...dataCom];
-          copy.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
-          setDataCom(copy);
+          // on stock la réponse dans un état tableau temp
+          // si dans l'état il rafraichit la page et écrase celui déjà là.
+          tmpDataCom.push(response.data.results[0]); // results est déjà un tableau, il faut envoyer son contenu
         }
+
+        // on met à jour l'état avec le tableau temp finalisé
+        setDataCom(tmpDataCom);
       }
       // on dit que la page est chargée
       setIsComLoaded(true);
