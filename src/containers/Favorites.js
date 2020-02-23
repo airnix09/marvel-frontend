@@ -72,7 +72,7 @@ const Favorites = () => {
           const com = listFavComics[index];
           // récupération des données sur le backend
           console.log("url for comics to fetch : ", urlCom + com);
-          const response = await axios.get(urlCom + elem);
+          const response = await axios.get(urlCom + com);
           console.log("retour du backend pour comics", response.data.results);
           // on stock la réponse dans un état tableau
           const copy = [...dataCom];
