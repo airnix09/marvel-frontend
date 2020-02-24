@@ -33,7 +33,12 @@ const App = () => {
       <Header />
       <Switch>
         <Route path="/favorites">
-          <Favorites />
+          <Favorites
+            setFavoriteCharacters={setFavoriteCharacters}
+            favoriteCharacters={favoriteCharacters}
+            setFavoriteComics={setFavoriteComics}
+            favoriteComics={favoriteComics}
+          />
         </Route>
         <Route path="/characters">
           <Characters
