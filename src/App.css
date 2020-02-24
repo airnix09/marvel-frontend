@@ -21,6 +21,9 @@ a {
   outline: none;
   text-decoration: inherit;
   color: inherit;
+  padding: 10px;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .charging {
