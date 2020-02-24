@@ -96,8 +96,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
                   title={elem.name}
                   picture={elem.thumbnail.path + "." + elem.thumbnail.extension}
                   description={elem.description}
-                  setFavoriteCharacters={setFavoriteCharacters}
-                  favoriteCharacters={favoriteCharacters}
+                  context="characters"
                 />
               );
             })

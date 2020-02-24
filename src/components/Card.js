@@ -2,16 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 
-const Card = ({
-  id,
-  title,
-  description,
-  picture,
-  setFavoriteCharacters,
-  favoriteCharacters,
-  setFavoriteComics,
-  favoriteComics
-}) => {
+const Card = ({ id, title, description, picture, context }) => {
   return (
     <div className="card">
       <div className="card-illustration">
@@ -40,7 +31,7 @@ const Card = ({
           Ajouter au favoris
         </button>
       </div>
-      {setFavoriteCharacters && favoriteCharacters ? (
+      {context === "characters" ? (
         <Link to={"/character/" + id} key={id}>
           <div className="card-infos">
             <h2>{title}</h2>

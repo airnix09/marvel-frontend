@@ -125,6 +125,7 @@ const Favorites = () => {
                       elem.thumbnail.path + "." + elem.thumbnail.extension
                     }
                     description={elem.description}
+                    context="characters"
                   />
                 );
               })
@@ -147,6 +148,7 @@ const Favorites = () => {
                       elem.thumbnail.path + "." + elem.thumbnail.extension
                     }
                     description={elem.description}
+                    context="comics"
                   />
                 );
               })

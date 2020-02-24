@@ -94,8 +94,7 @@ const Comics = ({ setFavoriteComics, favoriteComics }) => {
                   title={elem.title}
                   picture={elem.thumbnail.path + "." + elem.thumbnail.extension}
                   description={elem.description}
-                  setFavoriteComics={setFavoriteComics}
-                  favoriteComics={favoriteComics}
+                  context="comics"
                 />
               );
             })
