@@ -16,7 +16,13 @@ const Card = ({
   return (
     <div className="card">
       <div className="card-illustration">
-        <img src={picture} alt={title} />
+        {context === "characters" ? (
+          <Link to={"/character/" + id} key={id}>
+            <img src={picture} alt={title} />
+          </Link>
+        ) : (
+          <img src={picture} alt={title} />
+        )}
         <button
           onClick={() => {
             if (
@@ -41,19 +47,10 @@ const Card = ({
           Ajouter au favoris
         </button>
       </div>
-      {context === "characters" ? (
-        <div className="card-infos">
-          <Link to={"/character/" + id} key={id}>
-            <h2>{title}</h2>
-            <p>{description}</p>
-          </Link>
-        </div>
-      ) : (
-        <div className="card-infos">
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-      )}
+      <div className="card-infos">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };
