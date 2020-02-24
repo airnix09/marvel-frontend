@@ -27,8 +27,13 @@ const Favorites = (
   console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
 
   // recréation de la liste des favoris
-  const listFavComics = strFavoriteComics.split(",");
-  const listFavCharacters = strFavoriteCharacters.split(",");
+  if (strFavoriteComics !== "") {
+    const listFavComics = strFavoriteComics.split(",");
+  }
+  if (strFavoriteCharacters !== "") {
+    const listFavCharacters = strFavoriteCharacters.split(",");
+  }
+
   // check
   console.log("listFavComics", listFavComics);
   console.log("listFavCharacters", listFavCharacters);
