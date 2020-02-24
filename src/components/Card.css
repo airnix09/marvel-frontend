@@ -13,6 +13,7 @@
   height: 200px;
   width: 200px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card-illustration {
@@ -23,7 +24,6 @@
   padding: 10px;
   overflow-y: scroll;
   box-sizing: border-box;
-  cursor: pointer;
 }
 
 .card-illustration > button {
