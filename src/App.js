@@ -36,8 +36,8 @@ const App = () => {
     const listFavComics = strFavoriteComics.split(",");
     const listFavCharacters = strFavoriteCharacters.split(",");
     // check
-    // console.log("listFavComics", listFavComics);
-    // console.log("listFavCharacters", listFavCharacters);
+    console.log("listFavComics", listFavComics);
+    console.log("listFavCharacters", listFavCharacters);
 
     // on initialise les states avec ce qu'on récupère des cookies
     setFavoriteComics(listFavComics);
