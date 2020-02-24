@@ -42,12 +42,12 @@ const Card = ({
         </button>
       </div>
       {context === "characters" ? (
-        <Link to={"/character/" + id} key={id}>
-          <div className="card-infos">
+        <div className="card-infos">
+          <Link to={"/character/" + id} key={id}>
             <h2>{title}</h2>
             <p>{description}</p>
-          </div>
-        </Link>
+          </Link>
+        </div>
       ) : (
         <div className="card-infos">
           <h2>{title}</h2>
