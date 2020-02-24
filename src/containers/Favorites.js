@@ -10,33 +10,6 @@ const Favorites = (
   favoriteCharacters,
   setFavoriteCharacters
 ) => {
-  // récupération des cookies
-  const tmpFavoriteComics = Cookies.get("favoriteComics");
-  const tmpFavoriteCharacters = Cookies.get("favoriteCharacters");
-  // suppression des [ ] dans le string récupéré
-  const strFavoriteComics = tmpFavoriteComics.substring(
-    1,
-    tmpFavoriteComics.length - 1
-  );
-  const strFavoriteCharacters = tmpFavoriteCharacters.substring(
-    1,
-    tmpFavoriteCharacters.length - 1
-  );
-  // check
-  console.log("strFavoriteComics from Cookies", strFavoriteComics);
-  console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
-
-  // recréation de la liste des favoris
-  const listFavComics = strFavoriteComics.split(",").filter(elem => {
-    return elem !== "";
-  });
-  const listFavCharacters = strFavoriteCharacters.split(",").filter(elem => {
-    return elem !== "";
-  });
-  // check
-  console.log("listFavComics", listFavComics);
-  console.log("listFavCharacters", listFavCharacters);
-
   // déclaration des states
   const [dataChar, setDataChar] = useState([]);
   const [dataCom, setDataCom] = useState([]);
@@ -49,10 +22,10 @@ const Favorites = (
   const fetchCharData = async () => {
     try {
       // pour chaque personnage dans les favoris
-      if (listFavCharacters.length > 0) {
+      if (favoriteCharacters.length > 0) {
         const tmpDataChar = [];
-        for (let index = 0; index < listFavCharacters.length; index++) {
-          const char = listFavCharacters[index];
+        for (let index = 0; index < favoriteCharacters.length; index++) {
+          const char = favoriteCharacters[index];
           // récupération des données sur le backend
           console.log("url for Characters to fetch : ", urlChar + char);
           const response = await axios.get(urlChar + char);
@@ -78,10 +51,10 @@ const Favorites = (
   const fetchComData = async () => {
     try {
       // pour chaque personnage dans les favoris
-      if (listFavComics.length > 0) {
+      if (favoriteComics.length > 0) {
         const tmpDataCom = [];
-        for (let index = 0; index < listFavComics.length; index++) {
-          const com = listFavComics[index];
+        for (let index = 0; index < favoriteComics.length; index++) {
+          const com = favoriteComics[index];
           // récupération des données sur le backend
           console.log("url for comics to fetch : ", urlCom + com);
           const response = await axios.get(urlCom + com);
