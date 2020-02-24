@@ -11,38 +11,9 @@ import Favorites from "./containers/Favorites";
 import "./App.css";
 
 const App = () => {
+  // on initialise les states avec ce qu'on récupère des cookies
   const [favoriteComics, setFavoriteComics] = useState([]);
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
-
-  // uniquement au premier chargement, on récupère les cookies stockés
-  useEffect(() => {
-    // récupération des cookies
-    const tmpFavoriteComics = Cookies.get("favoriteComics");
-    const tmpFavoriteCharacters = Cookies.get("favoriteCharacters");
-    // suppression des [ ] dans le string récupéré
-    const strFavoriteComics = tmpFavoriteComics.substring(
-      1,
-      tmpFavoriteComics.length - 1
-    );
-    const strFavoriteCharacters = tmpFavoriteCharacters.substring(
-      1,
-      tmpFavoriteCharacters.length - 1
-    );
-    // check
-    console.log("strFavoriteComics from Cookies", strFavoriteComics);
-    console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
-
-    // recréation de la liste des favoris
-    const listFavComics = strFavoriteComics.split(",");
-    const listFavCharacters = strFavoriteCharacters.split(",");
-    // check
-    console.log("listFavComics", listFavComics);
-    console.log("listFavCharacters", listFavCharacters);
-
-    // on initialise les states avec ce qu'on récupère des cookies
-    setFavoriteComics(listFavComics);
-    setFavoriteCharacters(listFavCharacters);
-  }, []);
 
   useEffect(() => {
     console.log("favoriteComics", favoriteComics);
