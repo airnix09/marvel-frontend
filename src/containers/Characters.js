@@ -23,7 +23,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [searched, setSearched] = useState("");
   // const [context, setContext] = useState("characters");
-  // const context = "characters";
+  const context = "characters";
 
   const fetchData = async () => {
     try {
@@ -100,7 +100,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
                   description={elem.description}
                   setFavoriteCharacters={setFavoriteCharacters}
                   favoriteCharacters={favoriteCharacters}
-                  context="characters"
+                  context={context}
                 />
               );
             })
