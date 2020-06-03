@@ -37,6 +37,7 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
                 url: "https://marvel-project-backend.herokuapp.com/characters?",
                 number: 1,
               });
+              setIsLoaded(false);
             }
           }
           if (context === "comics") {
@@ -54,6 +55,7 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
                 url: "https://marvel-project-backend.herokuapp.com/comics?",
                 number: 1,
               });
+              setIsLoaded(false);
             }
           }
         }}
