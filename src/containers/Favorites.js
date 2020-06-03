@@ -27,10 +27,10 @@ const Favorites = (
   console.log("strFavoriteCharacters from Cookies", strFavoriteCharacters);
 
   // recréation de la liste des favoris
-  const listFavComics = strFavoriteComics.split(",").filter(elem => {
+  const listFavComics = strFavoriteComics.split(",").filter((elem) => {
     return elem !== "";
   });
-  const listFavCharacters = strFavoriteCharacters.split(",").filter(elem => {
+  const listFavCharacters = strFavoriteCharacters.split(",").filter((elem) => {
     return elem !== "";
   });
   // check
@@ -40,8 +40,8 @@ const Favorites = (
   // déclaration des states
   const [dataChar, setDataChar] = useState([]);
   const [dataCom, setDataCom] = useState([]);
-  const urlChar = "https://mybackend-marvel.herokuapp.com/characters/";
-  const urlCom = "https://mybackend-marvel.herokuapp.com/comics/";
+  const urlChar = "https://marvel-project-backend.herokuapp.com/characters/";
+  const urlCom = "https://marvel-project-backend.herokuapp.com/comics/";
   const [isCharLoaded, setIsCharLoaded] = useState(false);
   const [isComLoaded, setIsComLoaded] = useState(false);
 

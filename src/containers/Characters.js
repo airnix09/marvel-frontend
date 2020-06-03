@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
-import { useHistory, Link } from "react-router-dom";
+// import Cookies from "js-cookie";
+// import { useHistory, Link } from "react-router-dom";
 import Card from "../components/Card";
 import Paging from "../components/Paging";
 import Search from "../components/Search";
@@ -9,7 +9,7 @@ import "./Characters.css";
 
 const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
   // init history
-  const history = useHistory();
+  // const history = useHistory();
 
   // déclaration des variables globales
   const pages = [];
@@ -17,12 +17,13 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
   // déclaration des states
   const [data, setData] = useState();
   const [page, setPage] = useState({
-    url: "https://mybackend-marvel.herokuapp.com/characters?",
-    number: 1
+    url: "https://marvel-project-backend.herokuapp.com/characters?",
+    number: 1,
   });
   const [isLoaded, setIsLoaded] = useState(false);
   const [searched, setSearched] = useState("");
-  const [context, setContext] = useState("characters");
+  // const [context, setContext] = useState("characters");
+  const context = "characters";
 
   const fetchData = async () => {
     try {
@@ -46,7 +47,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
   // constitution du nombre de page selon le retour de la recherche
   if (isLoaded) {
     // url de base
-    const urlbase = "https://mybackend-marvel.herokuapp.com/characters?";
+    const urlbase = "https://marvel-project-backend.herokuapp.com/characters?";
 
     // définition du nombre de pages à gérer
     const nbPages = Math.ceil(data.total / 100);
@@ -56,7 +57,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
       for (let i = 0; i < nbPages; i++) {
         pages.push({
           url: urlbase + "search=" + searched + "&page=" + (i + 1),
-          number: i + 1
+          number: i + 1,
         }); // i commence à 0 donc chaque chiffre est décalé de -1
       }
     } else {
@@ -66,6 +67,7 @@ const Characters = ({ setFavoriteCharacters, favoriteCharacters }) => {
       }
     }
 
+    // check pages
     console.log("pages", pages);
   }
 

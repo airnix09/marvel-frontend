@@ -14,48 +14,51 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
       <input
         type="text"
         placeholder="Recherche"
-        onChange={event => {
+        onChange={(event) => {
           setSearch(event.target.value);
         }}
       ></input>
       <button
-        onClick={event => {
+        onClick={(event) => {
           event.preventDefault();
           // on met à jour l'élément à chercher s'il y a une recherche
           if (context === "characters") {
             if (search) {
               setPage({
                 url:
-                  "https://mybackend-marvel.herokuapp.com/characters?search=" +
+                  "https://marvel-project-backend.herokuapp.com/characters?search=" +
                   search,
-                number: 1
+                number: 1,
               });
               setIsLoaded(false);
               setSearched(search);
-            } else {
-              setPage({
-                url:
-                  "https://mybackend-marvel.herokuapp.com/characters?search=",
-                number: 1
-              });
             }
+            // else {
+            //   setPage({
+            //     url:
+            //       "https://marvel-project-backend.herokuapp.com/characters?search=",
+            //     number: 1,
+            //   });
+            // }
           }
           if (context === "comics") {
             if (search) {
               setPage({
                 url:
-                  "https://mybackend-marvel.herokuapp.com/comics?search=" +
+                  "https://marvel-project-backend.herokuapp.com/comics?search=" +
                   search,
-                number: 1
+                number: 1,
               });
               setIsLoaded(false);
               setSearched(search);
-            } else {
-              setPage({
-                url: "https://mybackend-marvel.herokuapp.com/comics?search=",
-                number: 1
-              });
             }
+            // else {
+            //   setPage({
+            //     url:
+            //       "https://marvel-project-backend.herokuapp.com/comics?search=",
+            //     number: 1,
+            //   });
+            // }
           }
         }}
       >
