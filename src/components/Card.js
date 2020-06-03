@@ -26,17 +26,19 @@ const Card = ({
         <button
           onClick={() => {
             if (
-              // setFavoriteCharacters &&
-              // favoriteCharacters &&
-              (context = "characters" && favoriteCharacters.indexOf(id) === -1)
+              setFavoriteCharacters &&
+              favoriteCharacters &&
+              context === "characters" &&
+              favoriteCharacters.indexOf(id) === -1
             ) {
               const copy = [...favoriteCharacters];
               copy.push(id);
               setFavoriteCharacters(copy);
             } else if (
-              // setFavoriteComics &&
-              // favoriteComics &&
-              (context = "comics" && favoriteComics.indexOf(id) === -1)
+              setFavoriteComics &&
+              favoriteComics &&
+              context === "comics" &&
+              favoriteComics.indexOf(id) === -1
             ) {
               const copy = [...favoriteComics];
               copy.push(id);

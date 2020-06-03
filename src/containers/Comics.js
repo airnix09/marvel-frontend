@@ -23,7 +23,7 @@ const Comics = ({ setFavoriteComics, favoriteComics }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [searched, setSearched] = useState("");
   // const [context, setContext] = useState("comics");
-  const context = "comics";
+  // const context = "comics";
 
   const fetchData = async () => {
     try {
