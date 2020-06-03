@@ -167,7 +167,7 @@ const Favorites = (
                   />
                 );
               })
-            ) : isCharLoaded && dataChar.length === 0 ? (
+            ) : isComLoaded && dataChar.length === 0 ? (
               <div className="charging">Pas de comics favori</div>
             ) : (
               <div className="charging">Chargement en cours</div>
