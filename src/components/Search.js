@@ -32,14 +32,12 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
               });
               setIsLoaded(false);
               setSearched(search);
+            } else {
+              setPage({
+                url: "https://marvel-project-backend.herokuapp.com/characters?",
+                number: 1,
+              });
             }
-            // else {
-            //   setPage({
-            //     url:
-            //       "https://marvel-project-backend.herokuapp.com/characters?search=",
-            //     number: 1,
-            //   });
-            // }
           }
           if (context === "comics") {
             if (search) {
@@ -51,14 +49,12 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
               });
               setIsLoaded(false);
               setSearched(search);
+            } else {
+              setPage({
+                url: "https://marvel-project-backend.herokuapp.com/comics?",
+                number: 1,
+              });
             }
-            // else {
-            //   setPage({
-            //     url:
-            //       "https://marvel-project-backend.herokuapp.com/comics?search=",
-            //     number: 1,
-            //   });
-            // }
           }
         }}
       >
