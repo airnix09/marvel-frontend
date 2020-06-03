@@ -38,6 +38,7 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
                 number: 1,
               });
               setIsLoaded(false);
+              setSearched("");
             }
           }
           if (context === "comics") {
@@ -56,6 +57,7 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
                 number: 1,
               });
               setIsLoaded(false);
+              setSearched("");
             }
           }
         }}
