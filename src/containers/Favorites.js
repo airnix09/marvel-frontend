@@ -140,6 +140,8 @@ const Favorites = (
                   />
                 );
               })
+            ) : isCharLoaded && dataChar.length === 0 ? (
+              <div className="charging">Pas de personnage favori</div>
             ) : (
               <div className="charging">Chargement en cours</div>
             )}
@@ -165,6 +167,8 @@ const Favorites = (
                   />
                 );
               })
+            ) : isCharLoaded && dataChar.length === 0 ? (
+              <div className="charging">Pas de comics favori</div>
             ) : (
               <div className="charging">Chargement en cours</div>
             )}

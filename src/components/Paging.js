@@ -3,8 +3,8 @@ import "./Paging.css";
 
 const Paging = ({ page, pages, setPage, setIsLoaded }) => {
   console.log("page", page);
-  // déclaration des states
-  const [pageSelected, setPageSelected] = useState(1);
+  // // déclaration des states
+  // const [pageSelected, setPageSelected] = useState(1);
 
   // constitution du tableau de pages affichées dans la pagination
   let paging = [];
@@ -31,7 +31,7 @@ const Paging = ({ page, pages, setPage, setIsLoaded }) => {
           onClick={() => {
             // on cherche l'index de la page actuelle dans pages
             const pageIndex = pages.findIndex(
-              elem => elem.number === page.number
+              (elem) => elem.number === page.number
             ); // prend une fonction anonyme
             // et on dit qu'on recharge à nouveau
             setIsLoaded(false);
@@ -48,7 +48,7 @@ const Paging = ({ page, pages, setPage, setIsLoaded }) => {
           onClick={() => {
             // on cherche l'index de la page actuelle dans pages
             const pageIndex = pages.findIndex(
-              elem => elem.number === page.number
+              (elem) => elem.number === page.number
             ); // prend une fonction anonyme
             // et on dit qu'on recharge à nouveau
             setIsLoaded(false);
@@ -84,7 +84,7 @@ const Paging = ({ page, pages, setPage, setIsLoaded }) => {
           onClick={() => {
             // on cherche l'index de la page actuelle dans pages
             const pageIndex = pages.findIndex(
-              elem => elem.number === page.number
+              (elem) => elem.number === page.number
             ); // prend une fonction anonyme
             // et on dit qu'on recharge à nouveau
             setIsLoaded(false);
@@ -101,7 +101,7 @@ const Paging = ({ page, pages, setPage, setIsLoaded }) => {
           onClick={() => {
             // on cherche l'index de la page actuelle dans pages
             const pageIndex = pages.findIndex(
-              elem => elem.number === page.number
+              (elem) => elem.number === page.number
             ); // prend une fonction anonyme
             // et on dit qu'on recharge à nouveau
             setIsLoaded(false);
