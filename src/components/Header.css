@@ -25,5 +25,7 @@
 
 .menu li {
   margin: 10px 10px;
+  padding: 8px;
   font-size: 24px;
+  border-radius: 3px;
 }
