@@ -4,14 +4,12 @@ import Logo from "../assets/img/Marvel-Logo.png";
 import "./Header.css";
 
 const Header = ({ context, setContext }) => {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Personnages");
   return (
     <div className="header">
       <div className="container">
         <div className="header-top">
-          <Link to="/">
-            <img src={Logo} alt="Logo" />
-          </Link>
+          <img src={Logo} alt="Logo" />
         </div>
       </div>
       <div className="header-bottom">
