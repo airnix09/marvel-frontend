@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import "./Search.css";
 
 const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
-  // déclaration de state
   const [search, setSearch] = useState("");
-
-  // init history
-  const history = useHistory();
 
   return (
     <div className="search">
@@ -21,7 +16,7 @@ const Search = ({ setPage, setSearched, setIsLoaded, context }) => {
       <button
         onClick={(event) => {
           event.preventDefault();
-          // on met à jour l'élément à chercher s'il y a une recherche
+
           if (context === "characters") {
             if (search) {
               setPage({

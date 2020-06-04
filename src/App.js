@@ -16,10 +16,10 @@ const App = () => {
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
 
   useEffect(() => {
-    console.log("favoriteComics", favoriteComics); // favoris actuel
-    const strFavoriteComics = JSON.stringify(favoriteComics); // transformation en string du json
-    console.log("strFavoriteComics", strFavoriteComics); // afficher le string obtenu
-    Cookies.set("favoriteComics", strFavoriteComics); // ajouter une nouvelle clé dans le cookie contenant le string des favoris
+    console.log("favoriteComics", favoriteComics);
+    const strFavoriteComics = JSON.stringify(favoriteComics);
+    console.log("strFavoriteComics", strFavoriteComics);
+    Cookies.set("favoriteComics", strFavoriteComics);
   }, [favoriteComics]);
 
   useEffect(() => {

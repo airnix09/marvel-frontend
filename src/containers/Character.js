@@ -9,10 +9,9 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
   // init history
   const history = useHistory();
 
-  // récupération du paramètre de l'url
+  // get id requested
   const { id } = useParams();
 
-  // déclaration des states
   const [data, setData] = useState();
   const url =
     "https://marvel-project-backend.herokuapp.com/characters/" + id + "/comics";
@@ -20,22 +19,19 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
 
   const fetchData = async () => {
     try {
-      // récupération des données sur le backend
       const response = await axios.get(url);
-      console.log("retour du backend", response.data.results);
-      // on stock la réponse dans un état
       setData(response.data.results);
-      // on dit que la page est chargée
       setIsLoaded(true);
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  // lancement à la recharge de la page
   useEffect(() => {
     fetchData();
   }, []);
+
+  console.log(data.results);
 
   return (
     <div className="character">
