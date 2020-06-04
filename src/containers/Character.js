@@ -31,7 +31,9 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
     fetchData();
   }, []);
 
-  console.log(data.results);
+  if (isLoaded) {
+    console.log(data.results);
+  }
 
   return (
     <div className="character">

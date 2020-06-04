@@ -48,7 +48,6 @@ const Comics = ({ setFavoriteComics, favoriteComics }) => {
         pages.push({ url: urlbase + "page=" + (i + 1), number: i + 1 });
       }
     }
-    console.log("pages", pages);
   }
 
   return (
