@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
-import { useHistory, Link, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Card from "../components/Card";
 import "./Character.css";
 
-const Character = ({ setFavoriteComics, favoriteComics }) => {
+const Character = ({ setFavoriteComics, favoriteComics, location }) => {
+  console.log("location", location);
   // init history
   const history = useHistory();
 

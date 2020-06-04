@@ -17,7 +17,13 @@ const Card = ({
     <div className="card">
       <div className="card-illustration">
         {context === "characters" ? (
-          <Link to={"/character/" + id} key={id}>
+          <Link
+            to={{
+              pathname: "/character/" + id,
+              state: { characterName: title },
+            }}
+            key={id}
+          >
             <img src={picture} alt={title} />
           </Link>
         ) : (
