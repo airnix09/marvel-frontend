@@ -21,6 +21,7 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
     try {
       const response = await axios.get(url);
       setData(response.data.results);
+      console.log(response.data.results);
       setIsLoaded(true);
     } catch (error) {
       console.log(error.message);
@@ -30,10 +31,6 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
   useEffect(() => {
     fetchData();
   }, []);
-
-  if (isLoaded) {
-    console.log(data.results);
-  }
 
   return (
     <div className="character">
