@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Card from "../components/Card";
 import "./Character.css";
 
-const Character = ({ setFavoriteComics, favoriteComics, location }) => {
-  console.log("location", location);
-  // init history
-  const history = useHistory();
+const Character = ({ setFavoriteComics, favoriteComics }) => {
+  const location = useLocation();
+  const { characterName } = location.state;
 
   // get id requested
   const { id } = useParams();
@@ -35,7 +34,9 @@ const Character = ({ setFavoriteComics, favoriteComics, location }) => {
     <div className="character">
       <div className="container">
         <div style={{ textAlign: "center", margin: "20px 0" }}>
-          <h2 style={{ color: "white" }}>Comics liés au personnage</h2>
+          <h2 style={{ color: "white" }}>
+            Comics liés au personnage {characterName}
+          </h2>
         </div>
         <div className="result">
           {isLoaded && data.length > 0 ? (
