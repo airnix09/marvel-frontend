@@ -16,16 +16,12 @@ const App = () => {
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
 
   useEffect(() => {
-    console.log("favoriteComics", favoriteComics);
     const strFavoriteComics = JSON.stringify(favoriteComics);
-    console.log("strFavoriteComics", strFavoriteComics);
     Cookies.set("favoriteComics", strFavoriteComics);
   }, [favoriteComics]);
 
   useEffect(() => {
-    console.log("favoriteCharacters", favoriteCharacters);
     const strFavoriteCharacters = JSON.stringify(favoriteCharacters);
-    console.log("strFavoriteCharacters", strFavoriteCharacters);
     Cookies.set("favoriteCharacters", strFavoriteCharacters);
   }, [favoriteCharacters]);
 

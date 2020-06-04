@@ -21,7 +21,6 @@ const Character = ({ setFavoriteComics, favoriteComics }) => {
     try {
       const response = await axios.get(url);
       setData(response.data.results);
-      console.log(response.data);
       setIsLoaded(true);
     } catch (error) {
       console.log(error.message);
